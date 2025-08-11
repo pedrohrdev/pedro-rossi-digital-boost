@@ -4,13 +4,14 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import ServiceCard from "@/components/ServiceCard";
 import DifferentialCard from "@/components/DifferentialCard";
+import ProjectCard from "@/components/ProjectCard"; // Importação do novo componente
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import InstagramFloat from "@/components/InstagramFloat";
 
 const Index = () => {
   const handleCTAClick = () => {
-  window.open("https://wa.me/5544991262009?text=Olá! Gostaria de solicitar um orçamento para meu site.", "_blank");
-};
+    window.open("https://wa.me/5544991262009?text=Olá! Gostaria de solicitar um orçamento para meu site.", "_blank");
+  };
 
   const services = [
     {
@@ -61,6 +62,34 @@ const Index = () => {
       description: "Conecte seu site às plataformas que seu público usa."
     }
   ];
+  
+  // Array de projetos para a nova seção
+  const projects = [
+    {
+      image: "/caminho/para/imagem-projeto1.png", // Mude o caminho da imagem aqui
+      title: "Nome do Projeto 1",
+      description: "Descrição curta do projeto 1, o que foi feito e qual tecnologia foi usada.",
+      link: "https://www.google.com" // Mude o link aqui
+    },
+    {
+      image: "/caminho/para/imagem-projeto2.png", // Mude o caminho da imagem aqui
+      title: "Nome do Projeto 2",
+      description: "Descrição curta do projeto 2, o que foi feito e qual tecnologia foi usada.",
+      link: "https://www.google.com" // Mude o link aqui
+    },
+    {
+      image: "/caminho/para/imagem-projeto3.png", // Mude o caminho da imagem aqui
+      title: "Nome do Projeto 3",
+      description: "Descrição curta do projeto 3, o que foi feito e qual tecnologia foi usada.",
+      link: "https://www.google.com" // Mude o link aqui
+    },
+    {
+      image: "/caminho/para/imagem-projeto4.png", // Mude o caminho da imagem aqui
+      title: "Nome do Projeto 4",
+      description: "Descrição curta do projeto 4, o que foi feito e qual tecnologia foi usada.",
+      link: "https://www.google.com" // Mude o link aqui
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -96,7 +125,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Serviços que <span className="text-purple-vibrant">impulsionam</span> seu negócio
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -129,8 +158,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Technical Section */}
+      {/* Projects Section - Nova Seção */}
       <section className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Meus <span className="text-purple-vibrant">Projetos</span> Recentes
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={index}
+                image={project.image}
+                title={project.title}
+                description={project.description}
+                link={project.link}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Section */}
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <Card className="p-8 md:p-12 bg-card border-border">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">
@@ -153,7 +202,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Sobre <span className="text-purple-vibrant">mim</span>
