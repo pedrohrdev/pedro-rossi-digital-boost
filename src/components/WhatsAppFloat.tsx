@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const WhatsAppFloat = () => {
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento para meu site.", "_blank");
+    window.open("https://wa.me/5544991262009?text=Olá! Gostaria de solicitar um orçamento para meu site.", "_blank");
   };
 
   return (

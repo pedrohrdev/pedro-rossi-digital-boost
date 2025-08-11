@@ -9,8 +9,8 @@ import InstagramFloat from "@/components/InstagramFloat";
 
 const Index = () => {
   const handleCTAClick = () => {
-    window.open("https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento para meu site.", "_blank");
-  };
+  window.open("https://wa.me/5544991262009?text=Olá! Gostaria de solicitar um orçamento para meu site.", "_blank");
+};
 
   const services = [
     {
@@ -21,21 +21,9 @@ const Index = () => {
     },
     {
       icon: <ShoppingCart className="text-white" size={24} />,
-      title: "Loja Virtual",
-      description: "Venda seus produtos online com segurança e praticidade.",
+      title: "Página de Vendas",
+      description: "Tenha uma página de vendas otimizada, com foco em converter os seus leads em compradores no Whatsapp.",
       deadline: "Prazo médio: 10 dias"
-    },
-    {
-      icon: <Calendar className="text-white" size={24} />,
-      title: "Agendamento Online",
-      description: "Permita que seus clientes reservem horários direto no site.",
-      deadline: "Prazo médio: 5 dias"
-    },
-    {
-      icon: <Search className="text-white" size={24} />,
-      title: "Otimização para Google (SEO)",
-      description: "Seja encontrado por mais pessoas e aumente sua visibilidade.",
-      deadline: "Prazo médio: 4 dias"
     },
     {
       icon: <Zap className="text-white" size={24} />,
@@ -126,7 +114,7 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Por que escolher <span className="text-purple-vibrant">Pedro Rossi</span>?
+            Por que me escolher?
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {differentials.map((differential, index) => (
@@ -168,7 +156,7 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Sobre <span className="text-purple-vibrant">Pedro Rossi</span>
+            Sobre <span className="text-purple-vibrant">mim</span>
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
@@ -181,12 +169,12 @@ const Index = () => {
             <div className="flex-1 text-center md:text-left">
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
                 Olá! Eu sou Pedro Rossi, tenho 15 anos e sou apaixonado por tecnologia. 
-                Desde pequeno, sempre fui um garoto criativo que adora transformar ideias em realidade digital. 
-                Minha jornada no desenvolvimento web começou cedo, e hoje dedico meu tempo a criar sites 
-                que não apenas impressionam visualmente, mas também geram resultados reais para meus clientes.
+                Desde pequeno, sempre fui um garoto criativo. Minha jornada no desenvolvimento web
+                começou cedo, e hoje dedico meu tempo a criar sites que não apenas impressionam visualmente,
+                mas também geram resultados reais para meus clientes.
               </p>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Combino criatividade juvenil com conhecimento técnico sólido para entregar projetos únicos 
+                Combino criatividade com conhecimento técnico sólido para entregar projetos únicos 
                 e modernos. Cada site que desenvolvo é pensado estrategicamente para converter visitantes em clientes.
               </p>
             </div>
@@ -201,19 +189,19 @@ const Index = () => {
             <p className="text-muted-foreground mb-2">Contatos:</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a 
-                href="https://wa.me/5511999999999" 
+                href="https://wa.me/5544991262009" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-purple-vibrant hover:text-purple-glow transition-colors"
               >
-                WhatsApp: (11) 99999-9999
+                WhatsApp: (44) 99126-2009
               </a>
               <span className="hidden sm:block text-muted-foreground">|</span>
               <a 
-                href="mailto:contato@pedrorossi.dev" 
+                href="mailto:pedrohrdev@gmail.com" 
                 className="text-purple-vibrant hover:text-purple-glow transition-colors"
               >
-                contato@pedrorossi.dev
+                pedrohrdev@gmail.com
               </a>
             </div>
           </div>
