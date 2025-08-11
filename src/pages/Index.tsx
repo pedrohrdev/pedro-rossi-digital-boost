@@ -1,10 +1,11 @@
-import { Building2, ShoppingCart, Calendar, Search, Zap, Headphones, Palette, Code, Users, Share2 } from "lucide-react";
+import { Building2, ShoppingCart, Calendar, Search, Zap, Headphones, Palette, Code, Users, Share2, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import ServiceCard from "@/components/ServiceCard";
 import DifferentialCard from "@/components/DifferentialCard";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import InstagramFloat from "@/components/InstagramFloat";
 
 const Index = () => {
   const handleCTAClick = () => {
@@ -163,6 +164,36 @@ const Index = () => {
         </div>
       </section>
 
+      {/* About Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Sobre <span className="text-purple-vibrant">Pedro Rossi</span>
+          </h2>
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-shrink-0">
+              <img 
+                src="/lovable-uploads/b7965a6f-7a69-4f4e-a1c2-89ad391a198b.png" 
+                alt="Pedro Rossi - Desenvolvedor Web" 
+                className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-purple-vibrant/20"
+              />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
+                Olá! Eu sou Pedro Rossi, tenho 15 anos e sou apaixonado por tecnologia. 
+                Desde pequeno, sempre fui um garoto criativo que adora transformar ideias em realidade digital. 
+                Minha jornada no desenvolvimento web começou cedo, e hoje dedico meu tempo a criar sites 
+                que não apenas impressionam visualmente, mas também geram resultados reais para meus clientes.
+              </p>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                Combino criatividade juvenil com conhecimento técnico sólido para entregar projetos únicos 
+                e modernos. Cada site que desenvolvo é pensado estrategicamente para converter visitantes em clientes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12 px-4 bg-background border-t border-border">
         <div className="container mx-auto text-center">
@@ -193,6 +224,7 @@ const Index = () => {
       </footer>
 
       <WhatsAppFloat />
+      <InstagramFloat />
     </div>
   );
 };
