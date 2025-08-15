@@ -66,16 +66,16 @@ const Index = () => {
   // Array de projetos para a nova seção
   const projects = [
     {
-      image: "/caminho/para/imagem-projeto1.png", // Mude o caminho da imagem aqui
-      title: "Nome do Projeto 1",
-      description: "Descrição curta do projeto 1, o que foi feito e qual tecnologia foi usada.",
-      link: "https://www.google.com" // Mude o link aqui
+      image: "/flow.png", // Mude o caminho da imagem aqui
+      title: "Flow",
+      description: "Pagina de vendas para um app de organização e produtividade, ajudando a gerenciar tarefas de forma simples e intuitiva",
+      link: "https://pedrohrdev.github.io/flow/" // Mude o link aqui
     },
     {
-      image: "/caminho/para/imagem-projeto2.png", // Mude o caminho da imagem aqui
-      title: "Nome do Projeto 2",
-      description: "Descrição curta do projeto 2, o que foi feito e qual tecnologia foi usada.",
-      link: "https://www.google.com" // Mude o link aqui
+      image: "/bellanapoli.png", // Mude o caminho da imagem aqui
+      title: "Bella Napoli",
+      description: "Site institucional para uma pizzaria, com foco em design proffisional e praticidade!",
+      link: "https://pedrohrdev.github.io/bella-napoli/" // Mude o link aqui
     },
     {
       image: "/caminho/para/imagem-projeto3.png", // Mude o caminho da imagem aqui
