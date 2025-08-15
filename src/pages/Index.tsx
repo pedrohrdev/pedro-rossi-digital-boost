@@ -77,18 +77,7 @@ const Index = () => {
       description: "Site institucional para uma pizzaria, com foco em design proffisional e praticidade!",
       link: "https://pedrohrdev.github.io/bella-napoli/" // Mude o link aqui
     },
-    {
-      image: "/caminho/para/imagem-projeto3.png", // Mude o caminho da imagem aqui
-      title: "Nome do Projeto 3",
-      description: "Descrição curta do projeto 3, o que foi feito e qual tecnologia foi usada.",
-      link: "https://www.google.com" // Mude o link aqui
-    },
-    {
-      image: "/caminho/para/imagem-projeto4.png", // Mude o caminho da imagem aqui
-      title: "Nome do Projeto 4",
-      description: "Descrição curta do projeto 4, o que foi feito e qual tecnologia foi usada.",
-      link: "https://www.google.com" // Mude o link aqui
-    },
+
   ];
 
   return (
