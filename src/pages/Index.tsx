@@ -9,8 +9,74 @@ import DifferentialCard from "@/components/DifferentialCard";
 import ProjectCard from "@/components/ProjectCard"; // Importação do novo componente
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import InstagramFloat from "@/components/InstagramFloat";
+import { supabase } from "@/integrations/supabase/client";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    whatsapp: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.whatsapp) {
+      toast({
+        title: "Erro",
+        description: "Por favor, preencha todos os campos.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('newsletter_signups')
+        .insert([formData]);
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Sucesso!",
+        description: "Obrigado por se cadastrar! Você receberá nossas atualizações em breve.",
+      });
+
+      // Limpar o formulário
+      setFormData({
+        name: '',
+        email: '',
+        whatsapp: ''
+      });
+
+    } catch (error) {
+      console.error('Erro ao cadastrar:', error);
+      toast({
+        title: "Erro",
+        description: "Erro ao realizar cadastro. Tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const handleCTAClick = () => {
     window.open("https://wa.me/5544991262009?text=Olá! Gostaria de solicitar um orçamento para meu site.", "_blank");
   };
@@ -230,7 +296,7 @@ const Index = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-8">
               Cadastre-se para receber <span className="text-purple-vibrant">novas atualizações</span>
             </h3>
-            <form className="space-y-4">
+            <form onSubmit={handleNewsletterSubmit} className="space-y-4">
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-left">
                   <Label htmlFor="name" className="text-sm font-medium mb-2 block">
@@ -241,6 +307,9 @@ const Index = () => {
                     type="text"
                     placeholder="Seu nome"
                     className="w-full"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
                   />
                 </div>
                 <div className="text-left">
@@ -252,6 +321,9 @@ const Index = () => {
                     type="email"
                     placeholder="seu@email.com"
                     className="w-full"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
                   />
                 </div>
                 <div className="text-left">
@@ -263,6 +335,9 @@ const Index = () => {
                     type="tel"
                     placeholder="(00) 99999-9999"
                     className="w-full"
+                    value={formData.whatsapp}
+                    onChange={handleInputChange}
+                    required
                   />
                 </div>
               </div>
@@ -271,8 +346,9 @@ const Index = () => {
                 variant="cta"
                 size="lg"
                 className="text-lg px-8 py-6 h-auto mt-6"
+                disabled={isSubmitting}
               >
-                Cadastrar
+                {isSubmitting ? 'Cadastrando...' : 'Cadastrar'}
               </Button>
               <p className="text-sm text-muted-foreground mt-4">
                 Se você se cadastrar ganha <span className="text-purple-vibrant font-semibold">10% de desconto</span> no primeiro projeto
