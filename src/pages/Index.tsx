@@ -1,6 +1,8 @@
 import { Building2, ShoppingCart, Calendar, Search, Zap, Headphones, Palette, Code, Users, Share2, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import Header from "@/components/Header";
 import ServiceCard from "@/components/ServiceCard";
 import DifferentialCard from "@/components/DifferentialCard";
@@ -221,31 +223,89 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 bg-background border-t border-border">
-        <div className="container mx-auto text-center">
-          <div className="mb-6">
-            <p className="text-muted-foreground mb-2">Contatos:</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a 
-                href="https://wa.me/5544991262009" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-purple-vibrant hover:text-purple-glow transition-colors"
+      <footer className="py-16 px-4 bg-background border-t border-border">
+        <div className="container mx-auto max-w-2xl">
+          {/* Newsletter Form */}
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold mb-8">
+              Cadastre-se para receber <span className="text-purple-vibrant">novas atualizações</span>
+            </h3>
+            <form className="space-y-4">
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="text-left">
+                  <Label htmlFor="name" className="text-sm font-medium mb-2 block">
+                    Nome
+                  </Label>
+                  <Input
+                    id="name"
+                    type="text"
+                    placeholder="Seu nome"
+                    className="w-full"
+                  />
+                </div>
+                <div className="text-left">
+                  <Label htmlFor="email" className="text-sm font-medium mb-2 block">
+                    Email
+                  </Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="seu@email.com"
+                    className="w-full"
+                  />
+                </div>
+                <div className="text-left">
+                  <Label htmlFor="whatsapp" className="text-sm font-medium mb-2 block">
+                    WhatsApp
+                  </Label>
+                  <Input
+                    id="whatsapp"
+                    type="tel"
+                    placeholder="(00) 99999-9999"
+                    className="w-full"
+                  />
+                </div>
+              </div>
+              <Button 
+                type="submit"
+                variant="cta"
+                size="lg"
+                className="text-lg px-8 py-6 h-auto mt-6"
               >
-                WhatsApp: (44) 99126-2009
-              </a>
-              <span className="hidden sm:block text-muted-foreground">|</span>
-              <a 
-                href="mailto:pedrohrdev@gmail.com" 
-                className="text-purple-vibrant hover:text-purple-glow transition-colors"
-              >
-                pedrohrdev@gmail.com
-              </a>
-            </div>
+                Cadastrar
+              </Button>
+              <p className="text-sm text-muted-foreground mt-4">
+                Se você se cadastrar ganha <span className="text-purple-vibrant font-semibold">10% de desconto</span> no primeiro projeto
+              </p>
+            </form>
           </div>
-          <p className="text-sm text-muted-foreground">
-            © 2025 Pedro Rossi. Todos os direitos reservados.
-          </p>
+
+          {/* Contact Info */}
+          <div className="text-center border-t border-border pt-8">
+            <div className="mb-6">
+              <p className="text-muted-foreground mb-2">Contatos:</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a 
+                  href="https://wa.me/5544991262009" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-purple-vibrant hover:text-purple-glow transition-colors"
+                >
+                  WhatsApp: (44) 99126-2009
+                </a>
+                <span className="hidden sm:block text-muted-foreground">|</span>
+                <a 
+                  href="mailto:pedrohrdev@gmail.com" 
+                  className="text-purple-vibrant hover:text-purple-glow transition-colors"
+                >
+                  pedrohrdev@gmail.com
+                </a>
+              </div>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              © 2025 Pedro Rossi. Todos os direitos reservados.
+            </p>
+          </div>
         </div>
       </footer>
 
