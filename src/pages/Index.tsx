@@ -45,6 +45,7 @@ const Index = () => {
     setIsSubmitting(true);
 
     try {
+      // Salvar no banco de dados
       const { error } = await supabase
         .from('newsletter_signups')
         .insert([formData]);
@@ -53,9 +54,26 @@ const Index = () => {
         throw error;
       }
 
+      // Disparar automação n8n (não bloqueia se falhar)
+      try {
+        const { error: functionError } = await supabase.functions.invoke('trigger-n8n-lead', {
+          body: {
+            name: formData.name,
+            email: formData.email,
+            whatsapp: formData.whatsapp,
+          }
+        });
+
+        if (functionError) {
+          console.error('Erro ao disparar automação n8n:', functionError);
+        }
+      } catch (err) {
+        console.error('Erro ao chamar função n8n:', err);
+      }
+
       toast({
         title: "Sucesso!",
-        description: "Obrigado por se cadastrar! Você receberá nossas atualizações em breve.",
+        description: "Cadastro realizado! Em breve entraremos em contato via WhatsApp.",
       });
 
       // Limpar o formulário
